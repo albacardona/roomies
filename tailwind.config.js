@@ -17,69 +17,6 @@ module.exports = {
         inter: ['Inter', 'sans-serif'],
       },
       colors: {
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        'foreground-secondary': 'hsl(var(--foreground-secondary))',
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))',
-        },
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
-        },
-        card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
-        },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
-        },
-        warning: {
-          DEFAULT: 'hsl(var(--warning))',
-          foreground: 'hsl(var(--warning-foreground))',
-        },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
-        },
-        success: 'hsl(var(--success))',
-        info: 'hsl(var(--info))',
-        white: 'hsl(var(--white))',
-        neutral: 'hsl(var(--neutral))',
-        link: 'hsl(var(--link))',
-        table: 'hsl(var(--table))',
-        customYellow: '#EAAA28',
-        lightYellow: '#FFF3CD',
-        customRed: '#D0021B',
-        lightRed: '#E1485C',
-        yegoGreen: '#0B9D8E',
-        yegoDarkGreen: '#088477',
-        customOrange: '#F7B328',
-        darkOrange: '#AA7B1B',
-        customGreen: '#08B822',
-        lightGreen: '#07BAA4',
-        darkGreen: '#076F17',
-        linkBlue: '#39A3FF',
-        dark: '#29323C',
-        comments: '#FFFFDE',
-        darkBrown: '#856404',
-        lightGrey: '#F5F5F5',
-        mediumGrey: '#BABABA',
-        darkGrey: '#363535',
-        lightBlue: '#F2FAFF',
-
         bg: {
           primary: {
             DEFAULT: 'var(--background-primary)',
@@ -89,100 +26,29 @@ module.exports = {
             DEFAULT: 'var(--background-secondary)',
             hover: 'var(--background-secondary-hover)',
           },
-          terciary: {
-            DEFAULT: 'var(--background-terciary)',
-            hover: 'var(--background-terciary-hover)',
-          },
-          brand: {
-            DEFAULT: 'var(--background-brand)',
-            hover: 'var(--background-brand-hover)',
-            light: {
-              DEFAULT: 'var(--background-brand-light)',
-              hover: 'var(--background-brand-light-hover)',
-            },
-          },
-          success: {
-            DEFAULT: 'var(--background-success)',
-            light: 'var(--background-success-light)',
-          },
-          destructive: {
-            DEFAULT: 'var(--background-destructive)',
-            light: 'var(--background-destructive-light)',
-          },
-          warning: {
-            DEFAULT: 'var(--background-warning)',
-            light: 'var(--background-warning-light)',
-          },
-          info: {
-            DEFAULT: 'var(--background-info)',
-            light: 'var(--background-info-light)',
-          },
-          contrast: 'var(--background-contrast)',
-          light: 'var(--background-light)',
         },
         fg: {
           primary: {
-            DEFAULT: 'var(--text-primary)',
-            hover: 'var(--text-primary-hover)',
+            DEFAULT: 'var(--foreground-primary)',
+            hover: 'var(--foreground-primary-hover)',
           },
           secondary: {
-            DEFAULT: 'var(--text-secondary)',
-            hover: 'var(--text-secondary-hover)',
+            DEFAULT: 'var(--foreground-secondary)',
+            hover: 'var(--foreground-secondary-hover)',
           },
-          brand: {
-            DEFAULT: 'var(--text-brand)',
-            hover: 'var(--text-brand-hover)',
-          },
-          success: {
-            DEFAULT: 'var(--text-fg-success)',
-            hover: 'var(--text-fg-success-hover)',
-          },
-          destructive: {
-            DEFAULT: 'var(--text-destructive)',
-            hover: 'var(--text-destructive-hover)',
-          },
-          warning: {
-            DEFAULT: 'var(--text-warning)',
-            hover: 'var(--text-warning-hover)',
-          },
-          info: {
-            DEFAULT: 'var(--text-info)',
-            hover: 'var(--text-info-hover)',
-          },
-          placeholder: {
-            DEFAULT: 'var(--text-fg-placeholder)',
-            disabled: 'var(--text-fg-placeholder-disabled)',
-          },
-          link: 'var(--text-link)',
-          contrast: 'var(--text-contrast)',
         },
         bd: {
           primary: {
             DEFAULT: 'var(--border-primary)',
             hover: 'var(--border-primary-hover)',
           },
-          secondary: {
-            DEFAULT: 'var(--border-secondary)',
-            hover: 'var(--border-secondary-hover)',
-          },
-          brand: {
-            DEFAULT: 'var(--border-brand)',
-            light: 'var(--border-brand-light)',
-          },
-          success: {
-            DEFAULT: 'var(--border-success)',
-            light: 'var(--border-success-light)',
-          },
-          destructive: {
-            DEFAULT: 'var(--border-destructive)',
-            light: 'var(--border-destructive-light)',
-          },
-          warning: {
-            DEFAULT: 'var(--border-warning)',
-            light: 'var(--border-warning-light)',
-          },
         },
-        ring: 'var(--ring-brand-light)',
+        accent: {
+          DEFAULT: 'var(--accent)',
+        },
+        primary: {
+          DEFAULT: 'var(--primary)',
+        },
       },
       animation: {
         border: 'border 3s',

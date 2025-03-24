@@ -1,5 +1,11 @@
 import './App.css';
+import { ThemeToggle } from './components/ThemeToggle';
 
 export const App = () => {
-  return <div className="h-screen bg-blue-950 text-white">Alba</div>;
+  return (
+    <div className="h-screen bg-bg-primary text-fg-primary">
+      <p>Alba</p>
+      <ThemeToggle />
+    </div>
+  );
 };
