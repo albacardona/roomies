@@ -3,6 +3,12 @@
     "intro": {
       "title": "Bienvenido a mi web",
       "description": "Soy una desarrolladora web apasionada de la tecnología, los deportes y los gatos. Me encanta crear sitios y aplicaciones web con tecnologías modernas, reactivos y eficientes."
+    },
+    "language": {
+      "spanish": "Español",
+      "french": "Francés",
+      "english": "Inglés",
+      "catalan": "Catalán"
     }
   }
 }

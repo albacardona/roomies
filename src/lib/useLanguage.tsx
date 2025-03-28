@@ -2,7 +2,7 @@ import i18n from '@/i18n';
 import { useEffect, useState } from 'react';
 
 export const useLanguage = () => {
-  const [userLanguage, setUserLanguage] = useState<string>('en');
+  const [userLanguage, setUserLanguage] = useState<string>('');
 
   useEffect(() => {
     const navigatorLanguage = navigator.language.split('-')[0];
@@ -16,5 +16,5 @@ export const useLanguage = () => {
     setUserLanguage(language);
   };
 
-  return { onChangeLanguage: handleChangeLanguage };
+  return { userLanguage, onChangeLanguage: handleChangeLanguage };
 };

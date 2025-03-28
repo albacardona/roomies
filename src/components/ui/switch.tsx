@@ -1,5 +1,4 @@
 import * as SwitchPrimitives from '@radix-ui/react-switch';
-import {} from '@untitled-ui/icons-react';
 import clsx from 'clsx';
 import * as React from 'react';
 

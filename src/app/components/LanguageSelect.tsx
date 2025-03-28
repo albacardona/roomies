@@ -1,22 +1,40 @@
+import { languageSelection } from '@/assets/languageSelection';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import { useLanguage } from '@/lib/useLanguage';
+import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const LanguageSelect = () => {
-  const { onChangeLanguage } = useLanguage();
+  const { t } = useTranslation();
+  const { userLanguage, onChangeLanguage } = useLanguage();
+
+  const filteredLanguageOptions = useMemo(
+    () => languageSelection.filter((language) => language.value !== userLanguage),
+    [userLanguage],
+  );
 
   return (
-    <div>
-      <button type="button" onClick={() => onChangeLanguage('en')}>
-        English
-      </button>
-      <button type="button" onClick={() => onChangeLanguage('es')}>
-        Español
-      </button>
-      <button type="button" onClick={() => onChangeLanguage('ca')}>
-        Català
-      </button>
-      <button type="button" onClick={() => onChangeLanguage('fr')}>
-        Français
-      </button>
-    </div>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <button type="button" className="cursor-pointer">
+          🌐
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="w-fit">
+        {filteredLanguageOptions.map((language) => (
+          <DropdownMenuItem key={language.id} onClick={() => onChangeLanguage(language.value)}>
+            <div className="flex items-center gap-2">
+              <span>{language.icon}</span>
+              <span>{t(language.translation)}</span>
+            </div>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
