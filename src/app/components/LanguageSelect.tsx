@@ -27,7 +27,7 @@ export const LanguageSelect = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button type="button" className="cursor-pointer text-sm">
-          {currentLanguage[0].icon} {currentLanguage[0].abbreviation}
+          {currentLanguage[0]?.icon} {currentLanguage[0]?.abbreviation}
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-fit">
