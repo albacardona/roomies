@@ -18,11 +18,16 @@ export const LanguageSelect = () => {
     [userLanguage],
   );
 
+  const currentLanguage = useMemo(
+    () => languageSelection.filter((language) => language.value === userLanguage),
+    [userLanguage],
+  );
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button type="button" className="cursor-pointer">
-          🌐
+        <button type="button" className="cursor-pointer text-sm">
+          {currentLanguage[0].icon} {currentLanguage[0].abbreviation}
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-fit">
