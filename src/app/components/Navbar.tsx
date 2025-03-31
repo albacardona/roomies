@@ -5,7 +5,7 @@ import logo from '@/assets/img/ACJ.png';
 
 export const Navbar = () => {
   return (
-    <nav className="h-14 w-full p-4 flex items-center justify-between bg-transparent text-fg-primary">
+    <nav className="h-16 w-full p-4 flex items-center justify-between bg-transparent text-fg-primary shadow-md">
       <ul className="flex items-center gap-4">
         <li>
           <Link to="/">
