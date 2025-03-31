@@ -7,9 +7,6 @@ export const Cats = () => {
   const [selectedCards, setSelectedCards] = useState<CatInfo[]>([]);
   const [matchedCards, setMatchedCards] = useState<CatInfo[]>([]);
   const [isFlipping, setIsFlipping] = useState<boolean>(false);
-  const [isGameOver, setIsGameOver] = useState<boolean>(false);
-
-  console.log(selectedCards, matchedCards);
 
   const cards = useMemo(() => {
     const cards = [...CatsInfo];
@@ -42,10 +39,6 @@ export const Cats = () => {
       }, 2000);
     } else {
       setSelectedCards([cat]);
-    }
-
-    if (matchedCards.length + 2 === cards.length) {
-      setIsGameOver(true);
     }
   };
 
