@@ -1,26 +1,24 @@
-import { useTranslation } from 'react-i18next';
 import { Navbar } from './app/components/Navbar';
-import { Card } from './app/components/Card';
-import { Button } from './components/ui/button';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HomePage } from './app/pages/HomePage';
+import { AboutMe } from './app/pages/AboutMe';
+import { Projects } from './app/pages/Projects';
+import { Cats } from './app/pages/Cats';
+import { PersonalProjects } from './app/pages/PersonalProjects';
 
 export const App = () => {
-  const { t } = useTranslation();
-
   return (
-    <main className="h-screen bg-bg-primary text-fg-primary">
-      <Navbar />
-      <h2>{t('translation:main.intro.title')}</h2>
-      <p>{t('translation:main.intro.description')}</p>
-      <Card title={t('translation:main.intro.card.title')}>
-        <p>{t('translation:main.intro.card.description')}</p>
-      </Card>
-      <Button>hola</Button>
-      <Button variant="secondary" size="sm">
-        hola
-      </Button>
-      <Button variant="accent" size="lg">
-        hola
-      </Button>
-    </main>
+    <BrowserRouter>
+      <main className="h-screen bg-bg-primary text-fg-primary overflow-auto">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutMe />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/cats" element={<Cats />} />
+          <Route path="/personal-projects" element={<PersonalProjects />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
   );
 };
