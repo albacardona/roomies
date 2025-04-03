@@ -1,46 +1,9 @@
-import { useMemo, useState } from 'react';
 import { CatCard } from '../components/CatCard';
 import { Container } from '../components/Container';
-import { type CatInfo, CatsInfo } from '@/assets/catsInfo';
+import { useMemoryCards } from '@/lib/useMemoryCards';
 
 export const Cats = () => {
-  const [selectedCards, setSelectedCards] = useState<CatInfo[]>([]);
-  const [matchedCards, setMatchedCards] = useState<CatInfo[]>([]);
-  const [isFlipping, setIsFlipping] = useState<boolean>(false);
-
-  const cards = useMemo(() => {
-    const cards = [...CatsInfo];
-    const doubleCards: CatInfo[] = [];
-
-    for (const cat of cards) {
-      const newCat = { id: cat.id + cards.length, cardNumber: cat.cardNumber, image: cat.image };
-      doubleCards.push(newCat);
-    }
-    const allCards = [...doubleCards, ...cards];
-
-    return allCards.sort(() => Math.random() - 0.5);
-  }, []);
-
-  const handleCardClick = (cat: CatInfo) => {
-    if (isFlipping || matchedCards.includes(cat)) {
-      return;
-    }
-
-    if (selectedCards.length > 0) {
-      setIsFlipping(true);
-      setSelectedCards((prev) => [...prev, cat]);
-
-      setTimeout(() => {
-        if (selectedCards[0].cardNumber === cat.cardNumber) {
-          setMatchedCards((prev) => [...prev, selectedCards[0], cat]);
-        }
-        setSelectedCards([]);
-        setIsFlipping(false);
-      }, 2000);
-    } else {
-      setSelectedCards([cat]);
-    }
-  };
+  const { cards, selectedCards, matchedCards, isFlipping, handleClickCard } = useMemoryCards();
 
   return (
     <Container>
@@ -50,7 +13,7 @@ export const Cats = () => {
             <CatCard
               key={cat.id}
               cat={cat}
-              onCardClick={handleCardClick}
+              onClickCard={handleClickCard}
               isFlipped={selectedCards.includes(cat) || matchedCards.includes(cat)}
               isDisabled={isFlipping}
             />
