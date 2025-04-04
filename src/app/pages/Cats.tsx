@@ -15,7 +15,7 @@ export const Cats = () => {
               cat={cat}
               onClickCard={handleClickCard}
               isFlipped={selectedCards.includes(cat) || matchedCards.includes(cat)}
-              isDisabled={isFlipping}
+              isFlipping={isFlipping}
             />
           ))}
         </div>

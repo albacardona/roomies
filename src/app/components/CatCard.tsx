@@ -4,33 +4,30 @@ import clsx from 'clsx';
 interface Props {
   cat: CatInfo;
   isFlipped: boolean;
-  isDisabled: boolean;
+  isFlipping: boolean;
   onClickCard: (cat: CatInfo) => void;
 }
 
-export const CatCard = ({ cat, isFlipped, isDisabled, onClickCard }: Props) => {
+export const CatCard = ({ cat, isFlipped, isFlipping, onClickCard }: Props) => {
   return (
     <button
       type="button"
       onClick={() => onClickCard(cat)}
-      disabled={isDisabled}
+      disabled={isFlipping}
       aria-label="cat-card"
       className={clsx({
         'relative size-36 flex flex-col items-center justify-center p-4 bg-bg-primary rounded-lg shadow-md [perspective:1000px] transition-all duration-500 [transform-style:preserve-3d]': true,
-        'cursor-progress': isDisabled,
+        '[transform:rotateY(180deg)]': isFlipped,
       })}
     >
-      <div
-        className={clsx({ 'absolute w-fit overflow-hidden rounded-lg': true, hidden: !isFlipped })}
-      >
-        <img src={cat.image} alt="frijo" className="size-32 object-cover rounded-lg" />
+      <div className="absolute w-fit overflow-hidden rounded-lg">
+        <img
+          src={cat.image}
+          alt="frijo"
+          className="size-32 object-cover rounded-lg [transform:rotateY(180deg)]"
+        />
       </div>
-      <div
-        className={clsx({
-          'absolute size-32 rounded-xl bg-bg-secondary [transform:rotateY(180deg)]': true,
-          hidden: isFlipped,
-        })}
-      />
+      <div className="absolute size-32 rounded-lg bg-bg-secondary [backface-visibility:hidden]" />
     </button>
   );
 };
