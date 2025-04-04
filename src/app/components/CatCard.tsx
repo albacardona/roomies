@@ -1,4 +1,5 @@
 import type { CatInfo } from '@/assets/catsInfo';
+import logo from '@/assets/img/ACJ.png';
 import clsx from 'clsx';
 
 interface Props {
@@ -16,18 +17,20 @@ export const CatCard = ({ cat, isFlipped, isFlipping, onClickCard }: Props) => {
       disabled={isFlipping}
       aria-label="cat-card"
       className={clsx({
-        'relative size-36 flex flex-col items-center justify-center p-4 bg-bg-primary rounded-lg shadow-md [perspective:1000px] transition-all duration-500 [transform-style:preserve-3d]': true,
+        'relative size-20 md:size-36 flex flex-col items-center justify-center p-4 bg-bg-primary rounded-lg shadow-md [perspective:1000px] transition-all duration-500 [transform-style:preserve-3d]': true,
         '[transform:rotateY(180deg)]': isFlipped,
       })}
     >
       <div className="absolute w-fit overflow-hidden rounded-lg">
         <img
           src={cat.image}
-          alt="frijo"
-          className="size-32 object-cover rounded-lg [transform:rotateY(180deg)]"
+          alt={cat.name}
+          className="size-16 md:size-32 object-cover rounded-lg [transform:rotateY(180deg)]"
         />
       </div>
-      <div className="absolute size-32 rounded-lg bg-bg-secondary [backface-visibility:hidden]" />
+      <div className="absolute size-16 md:size-32 flex items-center justify-center rounded-lg bg-bg-primary [backface-visibility:hidden]">
+        <img src={logo} alt="logo" className="size-8 md:size-16 object-cover rounded-lg" />
+      </div>
     </button>
   );
 };

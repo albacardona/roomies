@@ -11,7 +11,12 @@ export const useMemoryCards = () => {
     const doubleCards: CatInfo[] = [];
 
     for (const cat of cards) {
-      const newCat = { id: cat.id + cards.length, cardNumber: cat.cardNumber, image: cat.image };
+      const newCat = {
+        id: cat.id + cards.length,
+        name: cat.name,
+        cardNumber: cat.cardNumber,
+        image: cat.image,
+      };
       doubleCards.push(newCat);
     }
     const allCards = [...doubleCards, ...cards];

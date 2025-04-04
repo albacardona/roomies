@@ -7,8 +7,8 @@ export const Cats = () => {
 
   return (
     <Container>
-      <div className="w-full flex justify-center">
-        <div className="w-fit items-center grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+      <div className="size-full flex justify-center items-center">
+        <div className="w-fit items-center grid gap-4 grid-cols-4">
           {cards.map((cat) => (
             <CatCard
               key={cat.id}
