@@ -1,7 +1,7 @@
 {
   "files": {
     "portfolio": {
-      "path": "src/locales/%LANGUAGE%/translation.json",
+      "path": "src/translations/%LANGUAGE%/translation.json",
       "file_format": "i18next",
       "use_lowercase_directory_name": true
     }
