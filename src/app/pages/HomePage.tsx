@@ -6,8 +6,8 @@ export const HomePage = () => {
 
   return (
     <Container>
-      <h2>{t('translation:main.intro.title')}</h2>
-      <p>{t('translation:main.intro.description')}</p>
+      <h2>{t('translation:homepage.intro.title')}</h2>
+      <p>{t('translation:homepage.intro.description')}</p>
     </Container>
   );
 };

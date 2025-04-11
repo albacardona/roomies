@@ -1,6 +1,6 @@
 {
   "files": {
-    "portfolio": {
+    "roomies": {
       "path": "src/translations/%LANGUAGE%/translation.json",
       "file_format": "i18next",
       "use_lowercase_directory_name": true
