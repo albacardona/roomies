@@ -12,12 +12,12 @@ export const Avatar = ({ user }: Props) => {
     <div className="flex flex-col items-center justify-center gap-4">
       <button
         type="button"
-        className="size-32 sm:size-36 rounded-full border-4 border-bd-primary"
+        className="size-28 sm:size-44 rounded-full border-8 border-primary dark:border-accent"
         onClick={() => selectUser(user)}
       >
         <img className="rounded-full size-full" alt={user.name} src={user.src} />
       </button>
-      <p className="text-lg font-semibold">{user.name}</p>
+      <p className="text-lg font-semibold sm:text-2xl">{user.name}</p>
     </div>
   );
 };

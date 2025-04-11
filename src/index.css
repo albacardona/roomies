@@ -8,12 +8,12 @@
 @layer base {
   :root {
     --background-primary: #f9f9f9;
-    --background-secondary: #ffffff;
+    --background-secondary: #e2e2e2;
     --foreground-primary: #222222;
     --foreground-secondary: #555555;
     --primary: #007acc;
     --accent: #ff9800;
-    --border-primary: #e0e0e0;
+    --border-primary: #45669e;
   }
 
   .dark {
