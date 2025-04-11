@@ -1,13 +1,14 @@
-import { useTranslation } from 'react-i18next';
-import { Container } from '../components/Container';
+import Alba from '@/assets/img/AlbaAvatar.jpeg';
+import { Avatar } from '../components/Avatar';
 
 export const HomePage = () => {
-  const { t } = useTranslation();
-
   return (
-    <Container>
-      <h2>{t('translation:homepage.intro.title')}</h2>
-      <p>{t('translation:homepage.intro.description')}</p>
-    </Container>
+    <div className="size-full flex flex-col items-center justify-center gap-12">
+      <h2 className="text-4xl font-bold">¿Quién eres?</h2>
+      <div className="flex items-center gap-12">
+        <Avatar name="Alba" src={Alba} />
+        <Avatar name="Borru" src={Alba} />
+      </div>
+    </div>
   );
 };
