@@ -9,6 +9,7 @@ import { useUser } from './context/user-context';
 
 export const App = () => {
   const { selectedUser } = useUser();
+
   return (
     <BrowserRouter>
       <main className="h-screen bg-bg-primary text-fg-primary">

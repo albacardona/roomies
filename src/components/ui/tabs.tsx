@@ -34,7 +34,7 @@ export const Tabs = ({ className, children }: React.PropsWithChildren<Props>) =>
           </button>
         ))}
       </div>
-      <div className="h-[calc(100vh-6.5rem)] p-6 overflow-auto">{children}</div>
+      <div className="h-[calc(100vh-6.5rem)] pb-6 px-6 overflow-auto">{children}</div>
     </section>
   );
 };

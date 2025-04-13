@@ -12,8 +12,10 @@
     --foreground-primary: #222222;
     --foreground-secondary: #555555;
     --primary: #007acc;
+    --primary-light: #68b1e1;
     --accent: #ff9800;
     --border-primary: #45669e;
+    --modal-overlay: rgba(255, 255, 255, 0.5);
   }
 
   .dark {
@@ -22,8 +24,10 @@
     --foreground-primary: #eaeaea;
     --foreground-secondary: #b3b3b3;
     --primary: #4ba3c3;
+    --primary-light: #84c9e2;
     --accent: #ffb74d;
     --border-primary: #eaeaea;
+    --modal-overlay: rgba(255, 255, 255, 0.5);
   }
 }
 

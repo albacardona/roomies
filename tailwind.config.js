@@ -49,6 +49,7 @@ module.exports = {
         primary: {
           DEFAULT: 'var(--primary)',
         },
+        'modal-overlay': 'var(--modal-overlay)',
       },
       animation: {
         border: 'border 3s',

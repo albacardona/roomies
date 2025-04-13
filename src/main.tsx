@@ -9,8 +9,11 @@ import { createRoot } from 'react-dom/client';
 import { App } from './App.tsx';
 import { ThemeProvider } from './context/theme-context.tsx';
 import { UserProvider } from './context/user-context.tsx';
+import { ModalProvider } from './context/modal-context.tsx';
 import './index.css';
+import 'dayjs/locale/es';
 
+dayjs.locale('es');
 dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.extend(relativeTime);
@@ -23,7 +26,9 @@ if (rootElement) {
   createRoot(rootElement).render(
     <ThemeProvider>
       <UserProvider>
-        <App />
+        <ModalProvider>
+          <App />
+        </ModalProvider>
       </UserProvider>
     </ThemeProvider>,
   );
