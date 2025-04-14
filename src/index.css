@@ -7,15 +7,15 @@
 
 @layer base {
   :root {
-    --background-primary: #f9f9f9;
-    --background-secondary: #e2e2e2;
-    --foreground-primary: #222222;
+    --background-primary: #fbfdff;
+    --background-secondary: #eaf0f4;
+    --foreground-primary: #3a3c3f;
     --foreground-secondary: #555555;
     --primary: #007acc;
     --primary-light: #68b1e1;
-    --accent: #ff9800;
-    --border-primary: #45669e;
-    --modal-overlay: rgba(255, 255, 255, 0.5);
+    --accent: #ffb74d;
+    --border-primary: #555555;
+    --modal-overlay: rgba(0, 0, 0, 0.5);
   }
 
   .dark {

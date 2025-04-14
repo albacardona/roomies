@@ -1,19 +1,44 @@
 .rbc-month-view,
 .rbc-time-view {
   border-radius: 8px;
-  border-color: red;
+  border-color: #3a3c3f;
+}
+.rbc-month-header {
+  border-bottom: 1px solid #3a3c3f;
+}
+.rbc-time-header-content {
+  border-right: 1px solid #3a3c3f;
+}
+.rbc-header + .rbc-header {
+  border-left: 1px solid #3a3c3f;
+}
+.rbc-header + .rbc-today {
+  border-bottom: 1px solid #3a3c3f;
+}
+
+.rbc-row-bg {
+  border-bottom: 1px solid #3a3c3f;
+}
+.rbc-month-row:last-child {
+  .rbc-row-bg {
+    border: none;
+  }
+}
+
+.rbc-day-bg + .rbc-day-bg {
+  border-color: #3a3c3f;
 }
 
 .rbc-today {
-  background-color: #43a2c477;
+  background-color: #fce1b9;
 }
 
 .rbc-off-range {
-  color: rgb(225, 225, 225);
+  color: #555555;
 }
 
 .rbc-off-range-bg {
-  background-color: rgb(72, 72, 72);
+  background-color: rgb(206, 213, 219);
 }
 .rbc-off-range-bg:last-child {
   border-radius: 0px 0px 8px 0px;
@@ -24,18 +49,41 @@
   background-color: rgb(103, 0, 144);
 }
 
+.rbc-time-header-gutter {
+  border-right: 1px solid #3a3c3f;
+  border-bottom: 1px solid #3a3c3f;
+}
+
+.rbc-day-slot {
+  border-left: 1px solid #3a3c3f;
+}
+
 .rbc-timeslot-group:last-child {
   border-bottom: none;
 }
 
-@media (prefers-color-scheme: dark) {
+.dark {
   .rbc-month-view,
   .rbc-time-view {
     border-radius: 8px;
     border-color: white;
   }
+  .rbc-time-header-content {
+    border-right: 1px solid white;
+  }
+  .rbc-header + .rbc-header {
+    border-left: 1px solid white;
+  }
   .rbc-today {
     background-color: #43a2c477;
+  }
+  .rbc-month-row:last-child {
+    .rbc-row-bg {
+      border: none;
+    }
+  }
+  .rbc-day-bg + .rbc-day-bg {
+    border-color: white;
   }
 
   .rbc-off-range {

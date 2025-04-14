@@ -26,7 +26,7 @@ export const Tabs = ({ className, children }: React.PropsWithChildren<Props>) =>
             key={tab.id}
             className={clsx({
               'm-0 py-3 w-40 bg-bg-secondary rounded-full text-lg font-semibold first-letter:capitalize': true,
-              'border-2 border-bd-primary': currentLocation === tab.path,
+              'border-[3px] border-bd-primary': currentLocation === tab.path,
             })}
             onClick={() => navigate(tab.path)}
           >
@@ -34,7 +34,7 @@ export const Tabs = ({ className, children }: React.PropsWithChildren<Props>) =>
           </button>
         ))}
       </div>
-      <div className="h-[calc(100vh-6.5rem)] pb-6 px-6 overflow-auto">{children}</div>
+      <div className="h-[calc(100vh-6.7rem)] pb-6 px-6 overflow-auto">{children}</div>
     </section>
   );
 };

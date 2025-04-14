@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import { useTheme } from '@/context/theme-context';
 import type { IEventInfo } from '@/types/types';
 import { ChevronLeft, ChevronRight } from '@untitled-ui/icons-react';
 import dayjs from 'dayjs';
@@ -11,6 +12,8 @@ export const CustomToolbar = ({
   onView,
   onNavigate,
 }: ToolbarProps<IEventInfo, object>) => {
+  const { theme } = useTheme();
+
   const currentMonth = useMemo(() => {
     if (view === Views.MONTH) {
       return dayjs(date).format('MMMM');
@@ -28,11 +31,18 @@ export const CustomToolbar = ({
     }
   }, [date, view]);
 
+  const buttonVariant = useMemo(() => {
+    if (theme === 'dark') {
+      return 'secondary';
+    }
+    return 'accent';
+  }, [theme]);
+
   return (
     <div className="h-10 w-full mb-2 flex items-center justify-between">
       <div className="h-full flex items-center border border-bd-primary rounded-lg">
         <Button
-          variant={view === Views.MONTH ? 'secondary' : 'default'}
+          variant={view === Views.MONTH ? buttonVariant : 'default'}
           className="h-full rounded-l-lg rounded-r-none"
           onClick={() => onView(Views.MONTH)}
         >
@@ -40,7 +50,7 @@ export const CustomToolbar = ({
         </Button>
         <hr className="h-10 w-[1px] bg-bd-primary" />
         <Button
-          variant={view === Views.WEEK ? 'secondary' : 'default'}
+          variant={view === Views.WEEK ? buttonVariant : 'default'}
           className="h-full rounded-none"
           onClick={() => onView(Views.WEEK)}
         >
@@ -48,7 +58,7 @@ export const CustomToolbar = ({
         </Button>
         <hr className="h-10 w-[1px] bg-bd-primary" />
         <Button
-          variant={view === Views.DAY ? 'secondary' : 'default'}
+          variant={view === Views.DAY ? buttonVariant : 'default'}
           className="h-full rounded-l-none rounded-r-lg"
           onClick={() => onView(Views.DAY)}
         >

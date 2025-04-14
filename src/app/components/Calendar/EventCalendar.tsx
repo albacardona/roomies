@@ -16,12 +16,14 @@ import { CustomToolbar } from './CustomToolbar';
 import { MonthHeader } from './MonthHeader';
 import './EventCalendar.css';
 import { WeekHeader } from './WeekHeader';
+import { useTheme } from '@/context/theme-context';
 dayjs.extend(timezone);
 
 const djLocalizer = dayjsLocalizer(dayjs);
 
 export const EventCalendar = () => {
   const addEventModal = useModal();
+  const { theme } = useTheme();
   const [openSlot, setOpenSlot] = useState<boolean>(false);
   const [currentEvent, setCurrentEvent] = useState<Event | IEventInfo | null>(null);
   const [events, setEvents] = useState<IEventInfo[]>([]);
@@ -84,7 +86,7 @@ export const EventCalendar = () => {
         <div className="h-[calc(100vh-14rem)] w-2/6">
           <div className="h-10 mb-2 w-full flex justify-end">
             <Button
-              variant="secondary"
+              variant={theme === 'dark' ? 'secondary' : 'accent'}
               className="flex items-center gap-2"
               onClick={handleClickAddEvent}
             >
